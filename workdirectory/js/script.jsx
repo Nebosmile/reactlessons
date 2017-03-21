@@ -3,6 +3,7 @@ console.log('worked');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NewComponent from './new';
+console.log(React);
 
 class App extends React.Component {
 

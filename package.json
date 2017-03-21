@@ -4,13 +4,14 @@
   "description": "canvas",
   "main": "pong.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nebosmile/canvas.git"
   },
-  "author": "",
+  "author": "Pavel Akulov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nebosmile/canvas/issues"
@@ -25,6 +26,7 @@
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
     "del": "^2.2.2",
+    "express": "4.15.2",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.1",
