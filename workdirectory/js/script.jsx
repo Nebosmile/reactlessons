@@ -2,28 +2,20 @@ console.log('worked');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import NewComponent from './new';
 
 class App extends React.Component {
 
     constructor(props){
         super(props);
-
-        this.state ={
-            text: 'value'
-        };
     }
 
-    inputOnChange(event){
-        const text = event.target.value;
-        this.setState({ text });
-    }
 
     render() {
         return(
             <div style={{border:"1px solid #000", color:"#b68448"}} className ="test">
                 <h1>App works</h1>
-                <input type='text' value = {this.state.text} onChange={this.inputOnChange.bind(this)}/>
+                <NewComponent text = 'hello from newComp1' />
             </div>
         );
     }
@@ -33,6 +25,33 @@ ReactDOM.render(
     <App />,
     document.getElementsByClassName('workdiv')[0]
 )
+
+// class App extends React.Component {
+//
+//     constructor(props){
+//         super(props);
+//
+//         this.state ={
+//             text: 'value'
+//         };
+//     }
+//
+//     inputOnChange(event){
+//         const text = event.target.value;
+//         this.setState({ text });
+//     }
+//
+//     render() {
+//         return(
+//             <div style={{border:"1px solid #000", color:"#b68448"}} className ="test">
+//                 <h1>App works</h1>
+//                 <input type='text' value = {this.state.text} onChange={this.inputOnChange.bind(this)}/>
+//             </div>
+//         );
+//     }
+// }
+
+
 // class App extends React.Component {
 //     btnOnClick(event){
 //         console.log("rise of rise", event.target);

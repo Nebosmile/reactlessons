@@ -84,7 +84,7 @@ gulp.task('build', gulp.series('clean', 'jsx', 'assets', 'sass', 'css', 'img'))
 gulp.task('watch', function() {
     gulp.watch(directory + '/sass/**/*.scss', gulp.series('sass'));
     gulp.watch(directory + '/css/**/*.css', gulp.series('css'));
-    gulp.watch(directory + '/js/**/*.jsx', gulp.series('jsx'));
+    gulp.watch(directory + '/js/**/*.*', gulp.series('jsx'));
 })
 gulp.task('serve', function() {
     browserSync.init({
