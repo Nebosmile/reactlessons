@@ -5,26 +5,22 @@ export default class NewComponent extends Component{
 
     constructor(props){
         super(props);
-
-        console.log("constructor")
     }
+    renderItem(item, index){
+        return(
+            <div key = {index}>
+                <div>{item.author}</div>
+                <div>{item.text}</div>
+            </div>
 
-    componentWillMount(){
-        console.log('componentWillMountf');
-    }
-    componentDidMount(){
-        console.log('componentDidMount')
-    }
-
-    componentWillUnmount(){
-        console.log('componentWillUnmount')
+        )
     }
 
     render() {
-        console.log('render');
+        console.log('this.', this.props.array)
         return(
             <div className= "news">
-                <h3>Some text1</h3>
+                {this.props.array.map(this.renderItem.bind(this))}
             </div>
 
         );
