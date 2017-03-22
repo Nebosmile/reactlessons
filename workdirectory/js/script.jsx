@@ -3,6 +3,7 @@ console.log('worked');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NewComponent from './new';
+import { Router, Route, hashHistory } from 'react-router';
 console.log(React);
 
 class App extends React.Component {
@@ -10,38 +11,25 @@ class App extends React.Component {
     constructor(props){
         super(props);
 
-        this.state ={
-            arr :[
-                {
-                  author: 'Саша Печкин',
-                  text: 'В четверг, четвертого числа...'
-                },
-                {
-                  author: 'Просто Вася',
-                  text: 'Считаю, что $ должен стоить 35 рублей!'
-                },
-                {
-                  author: 'Гость',
-                  text: 'Бесплатно. Скачать. Лучший сайт - http://localhost:3000'
-                }
-            ]
-        };
     }
 
 
     render() {
-
         return(
             <div>
                 <h1>App works</h1>
-                <NewComponent array = {this.state.arr}/>
+
             </div>
         );
     }
 }
 
 ReactDOM.render(
-    <App />,
+    <Router history={ hashHistory }>
+        <Route path ={'/'} component ={ App }/>
+        <Route path ={'new'} component ={ NewComponent }/>
+    </Router>,
+    // <App />,
     document.getElementsByClassName('workdiv')[0]
 )
 

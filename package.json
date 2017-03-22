@@ -27,7 +27,7 @@
     "browserify": "^14.1.0",
     "del": "^2.2.2",
     "express": "4.15.2",
-    "gulp": "gulpjs/gulp#4.0",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.1",
     "gulp-concat": "^2.6.1",
@@ -41,7 +41,10 @@
     "path": "^0.12.7",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-router": "^1.0.3",
+    "react-redux": "5.0.3",
+    "react-router": "2.6.0",
+    "react-router-redux": "4.0.8",
+    "redux": "3.6.0",
     "vinyl-source-stream": "1.1.0"
   }
 }
