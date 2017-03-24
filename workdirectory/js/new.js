@@ -6,16 +6,16 @@ export default class NewComponent extends Component{
     constructor(props){
 
         super(props);
-        // this.rendme =this.props.child_props.map(function(item,index){
-        //     return(
-        //         <div key = {index}>
-        //             <div>{item.author}</div>
-        //             <div>{item.text}</div>
-        //             <div>первый вариант</div>
-        //         </div>
-        //
-        //     )
-        // });
+        this.rendme =this.props.child_props.map(function(item,index){
+            return(
+                <div key = {index}>
+                    <div>{item.author}</div>
+                    <div>{item.text}</div>
+                    <div>первый вариант</div>
+                </div>
+
+            )
+        });
     }
     renderItem(item, index){
 
@@ -35,11 +35,11 @@ export default class NewComponent extends Component{
 
         return(
             <div className= "news">
-                {this.props.child_props.map(renderItem.bind(this))}
+                {this.rendme || this.props.child_props.map(this.renderItem)}
             </div>
 
         );
 
     }
 }
-        // {this.props.child_props.map(renderItem.bind(this))}
+    
