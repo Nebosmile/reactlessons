@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 
-export default class NewComponent extends Component{
+export default class secondComponent extends Component{
 
     constructor(props){
-
         super(props);
-        // this.rendme =this.props.child_props.map(function(item,index){
+        // this.rendme =this.props.array.map(function(item,index){
         //     return(
         //         <div key = {index}>
         //             <div>{item.author}</div>
@@ -18,7 +17,6 @@ export default class NewComponent extends Component{
         // });
     }
     renderItem(item, index){
-
         return(
             <div key = {index}>
                 <div>{item.author}</div>
@@ -35,11 +33,10 @@ export default class NewComponent extends Component{
 
         return(
             <div className= "news">
-                {this.props.child_props.map(renderItem.bind(this))}
+            IndexComponent
             </div>
 
         );
 
     }
 }
-        // {this.props.child_props.map(renderItem.bind(this))}

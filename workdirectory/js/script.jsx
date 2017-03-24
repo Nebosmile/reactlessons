@@ -3,8 +3,24 @@ console.log('worked');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NewComponent from './new';
+import secondComponent from './new1';
 import { Router, Route, hashHistory } from 'react-router';
 console.log(React);
+
+var my_news = [
+  {
+    author: 'Саша Печкин',
+    text: 'В четверг, четвертого числа...'
+  },
+  {
+    author: 'Просто Вася',
+    text: 'Считаю, что $ должен стоить 35 рублей!'
+  },
+  {
+    author: 'Гость',
+    text: 'Бесплатно. Скачать. Лучший сайт - http://localhost:3000'
+  }
+];
 
 class App extends React.Component {
 
@@ -15,21 +31,28 @@ class App extends React.Component {
 
 
     render() {
+        const NewComponent1 =function (props) {
+            return(
+                <NewComponent child_props ={my_news}/>
+            );
+        };
         return(
-            <div>
-                <h1>App works</h1>
-
-            </div>
+            // <NewComponent1/>
+            // <div>
+            //     <h1>App works</h1>
+            //
+            // </div>
+            <Router history={ hashHistory }>
+                <Route path ={'/'} component ={ secondComponent }/>
+                <Route path ={'new'} component ={ NewComponent1 }/>
+            </Router>
         );
     }
 }
 
 ReactDOM.render(
-    <Router history={ hashHistory }>
-        <Route path ={'/'} component ={ App }/>
-        <Route path ={'new'} component ={ NewComponent }/>
-    </Router>,
-    // <App />,
+
+    <App />,
     document.getElementsByClassName('workdiv')[0]
 )
 
